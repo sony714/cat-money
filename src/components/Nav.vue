@@ -15,17 +15,18 @@
 
 <script lang="ts">
 import Vue from "vue";
-
 export default Vue.extend({
   name: "Nav",
 });
 </script>
 
 <style lang = "scss" scoped>
+@import "@/assets/style/helper.scss";
 nav {
   display: flex;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   flex-direction: row;
+  font-size: 12px;
   > .item {
     padding: 2px 0;
     width: 33.333333%;
@@ -39,7 +40,8 @@ nav {
     }
   }
   > .item.selected {
-    color: red;
+    color: $color-hightLight;
+    fill: $color-hightLight;
   }
 }
 </style>
