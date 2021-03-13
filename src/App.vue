@@ -7,14 +7,14 @@
 
 <style lang="scss">
 @import "~@/assets/style/reset.scss";
-@import "~@/assets/style/helper.css";
+@import "~@/assets/style/helper.scss";
 body {
   line-height: 1.5;
   font-family: $font-hei;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #333;
+  font-size: 16px;
 }
 </style>

@@ -17,3 +17,12 @@ $color-hightLight:#f00;
     box-shadow: inset 0 -3px 3px -3px $color-shadow,
     inset 0 3px 3px -3px $color-shadow;
   }
+
+  %clearFix{
+    &::after{
+        content: '';
+        clear: both;
+        display: block;
+      }
+  }
+  
