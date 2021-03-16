@@ -9,7 +9,7 @@
         @update:value="onUpdateNotes"
       />
     </div>
-    <Tags :dataSource.sync="tags" @update:value="onUpdateTags" />
+    <Tags />
   </Layout>
 </template> 
  
@@ -38,14 +38,8 @@ export default class Money extends Vue {
     type: "-",
     amount: 0,
   };
-  onUpdateTags(value: string[]) {
-    this.record.tags = value;
-  }
   onUpdateNotes(value: string) {
     this.record.notes = value;
-  }
-  onUpdateAmount(value: number) {
-    this.record.amount = value;
   }
   saveRecord() {
     store.createRecord(this.record);
