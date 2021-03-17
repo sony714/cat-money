@@ -30,11 +30,6 @@ import { Component } from "vue-property-decorator";
 
 @Component({
   components: { Tags, FormItem, Types, NumberPad },
-  computed: {
-    recordList() {
-      return this.$store.state.recordList;
-    },
-  },
 })
 export default class Money extends Vue {
   get recordList() {
@@ -50,7 +45,7 @@ export default class Money extends Vue {
     this.$store.commit("fetchRecords");
   }
 
-  onUpdateNotes(value: string) {
+  onUpdateNotes(value: string): void {
     this.record.notes = value;
   }
   saveRecord() {

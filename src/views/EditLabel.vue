@@ -14,7 +14,7 @@
       />
     </div>
     <div class="button-wrapper">
-      <button @click="remove">删除标签</button>
+      <Button @click="remove">删除标签</Button>
     </div>
   </Layout>
 </template>
@@ -24,7 +24,6 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import FormItem from "@/components/Money/FormItem.vue";
 import Button from "@/components/Button.vue";
-import { Tag } from "@/custom";
 
 @Component({ components: { Button, FormItem } })
 export default class EditLabel extends Vue {
@@ -33,6 +32,7 @@ export default class EditLabel extends Vue {
   }
   created() {
     const id = this.$route.params.id;
+    this.$store.commit("fetchTags");
     this.$store.commit("setCurrentTag", id);
     if (!this.currentTag) {
       this.$router.replace("/404");

@@ -11,7 +11,7 @@
         <Icon name="right" />
       </router-link>
     </div>
-    <div class="creatType-wrapper">
+    <div class="creatTag-wrapper">
       <Button class="createTag" @click="createTag"> 新建标签 </Button>
     </div>
   </Layout>
@@ -25,11 +25,6 @@ import { mixins } from "vue-class-component";
 import TagHelper from "@/mixins/TagHelper";
 @Component({
   components: { Button },
-  computed: {
-    tags() {
-      return this.$store.state.tagList;
-    },
-  },
 })
 export default class labels extends mixins(TagHelper) {
   beforeCreate() {
@@ -45,6 +40,7 @@ export default class labels extends mixins(TagHelper) {
 .tags {
   background: white;
   font-size: 20px;
+  padding-left: 16px;
   > .tag {
     min-height: 44px;
     display: flex;
@@ -52,7 +48,7 @@ export default class labels extends mixins(TagHelper) {
     justify-content: space-between;
     border-bottom: 1px solid #e6e6e6;
     padding-left: 25px;
-    > svg {
+    svg {
       color: #333;
       width: 18px;
       height: 18px;
@@ -60,7 +56,7 @@ export default class labels extends mixins(TagHelper) {
     }
   }
 }
-.creatType {
+.creatTag {
   background: #767676;
   color: white;
   border: none;
