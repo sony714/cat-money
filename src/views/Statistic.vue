@@ -1,14 +1,49 @@
 <template>
-  <Layout> <div>Statistic.vue</div></Layout>
+  <Layout>
+    <Tabs
+      class-prefix="type"
+      :data-source="recordTypeList"
+      :value.sync="type"
+    />
+    <Tabs
+      class-prefix="interval"
+      :data-source="intervalList"
+      :value.sync="interval"
+    />
+    <div>
+      type:{{ type }}
+      <br />
+      interval:{{ interval }}
+    </div>
+  </Layout>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import { Component } from "vue-property-decorator";
+import Tabs from "@/components/Tabs.vue";
+import recordTypeList from "@/constants/recordTypeList";
+import intervalList from "@/constants/intervalList";
 
-export default Vue.extend({
-  name: "Statistic",
-});
+@Component({
+  components: { Tabs },
+})
+export default class Statistics extends Vue {
+  type = "-";
+  interval = "day";
+  intervalList = intervalList;
+  crcordTypeList = recordTypeList;
+}
 </script>
 
-<style scoped>
+<style lang = 'scss' scoped>
+.x::v-deep .type-tabs-item {
+  background: white;
+  &.selected {
+    background: #c4c4c4;
+    &::after {
+      display: none;
+    }
+  }
+}
 </style>
