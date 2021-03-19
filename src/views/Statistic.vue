@@ -6,7 +6,7 @@
       :value.sync="type"
     />
     <ol>
-      <li v-for="(group, index) in result" :key="index">
+      <li v-for="(group, index) in groupedList" :key="index">
         <h3 class="title">
           {{ beautify(group.title) }} <span>￥{{ group.total }}</span>
         </h3>
@@ -79,6 +79,9 @@ export default class Statistics extends Vue {
         items: [newList[0]],
       },
     ];
+    if (newList.length === 0) {
+      return [] as Result;
+    }
     for (let i = 1; i < newList.length; i++) {
       const current = newList[i];
       const last = result[result.length - 1];
@@ -93,8 +96,6 @@ export default class Statistics extends Vue {
     }
     result.map((group) => {
       group.total = group.items.reduce((sum, item) => {
-        console.log(sum);
-        console.log(item);
         return sum + item.amount;
       }, 0);
     });
@@ -125,7 +126,7 @@ export default class Statistics extends Vue {
     align-content: center;
   }
   .title {
-    @extend #item;
+    @extend %item;
   }
   .record {
     background: white;
