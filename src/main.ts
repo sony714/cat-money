@@ -28,12 +28,12 @@ window.onload = function () {
 
 if (document.documentElement.clientWidth > 500) {
   window.alert('请使用手机浏览以保证浏览效果')
-  const image = document.createElement('img')
-  image.src = './website.png';
-  image.style.position = 'fixed';
-  image.style.left = '50%';
-  image.style.top = '50%';
-  image.style.transform = 'translate(-50%,-50%)'
-  image.style.boxShadow = '0 0 10px rgba(0,0,0,0.25)'
-  document.body.appendChild(image)
+  // const image = document.createElement('img')
+  // image.src = 'src/website.png';
+  // image.style.position = 'fixed';
+  // image.style.left = '50%';
+  // image.style.top = '50%';
+  // image.style.transform = 'translate(-50%,-50%)'
+  // image.style.boxShadow = '0 0 10px rgba(0,0,0,0.25)'
+  // document.body.appendChild(image)
 }
